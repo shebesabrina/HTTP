@@ -23,7 +23,7 @@ class TCPServer
     host_info = request_lines[1].split(" ")[1].split(":")
     path = request_route_info[1]
     response = ""
-    time = Time.now.strftime("%I:%M%p on %A, %B, %Y")#need to create spaces between D/M/Y.
+    time = Time.now.strftime("%I:%M%p on %A, %B %d, %Y") #need to create spaces between D/M/Y.
 
     if path == "/"
       response = "<pre>
@@ -40,7 +40,7 @@ class TCPServer
     elsif path == "/datetime"
       response = time
     elsif path == "/shutdown"
-      "Total Requests: #{}" #need to get the total number of the loop.
+      response =  "Total Requests: #{count}"
     end
 
 
